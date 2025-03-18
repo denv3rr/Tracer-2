@@ -90,7 +90,7 @@ This is (*currently*) a **console application** being built to research movement
     - Clone: `git clone https://github.com/denv3rr/Tracer-2`
     - `.zip`: https://github.com/denv3rr/Tracer-2/archive/refs/heads/main.zip
    
-2. **Build and run** (as of 10/23/2024)
+2. **Build and run** (as of 3/17/2025)
    
     - **To build using CMake:**
   
@@ -140,9 +140,9 @@ If you have any problems with anything, **submit an issue** to let me know.
 
 <br></br>
 
-Contributions are welcome.
+Contributions welcome.
 
-Feel free to fork this repo and create a pull request with any changes.
+You can fix this repo and create a pull request with any changes.
 
 [Create a new fork](https://github.com/denv3rr/Tracer-2/fork)
 
