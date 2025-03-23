@@ -3,7 +3,6 @@
 
 #include "Object.h"
 #include <vector>
-#include <sstream>
 #include <string>
 
 // Live travel boundaries (auto-expanding)
