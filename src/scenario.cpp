@@ -4,6 +4,7 @@
 #include <thread>
 #include <chrono>
 #include <iomanip>
+#include <sstream>
 #include <random> // For test target placement and movement
 
 // Travel coordinates
@@ -39,38 +40,44 @@ void printHorizontalUI(const Object &follower, const Object &target, const std::
         heatColor = "\033[1;34m"; // 🔵 Blue - far but detectable
 
     std::cout << "\033[2J\033[H"; // Clear screen and move cursor to top
-    constexpr int COL_WIDTH = 30;
 
-    std::cout << std::left << std::setw(COL_WIDTH) << "\033[1;32mFOLLOWER STATUS\033[0m"
-              << std::setw(COL_WIDTH) << "\033[1;33mMODE STATUS\033[0m"
-              << "\033[1;36mSYSTEM LOG\033[0m\n";
+    // Manual header alignment
+    std::cout << std::left
+              << "FOLLOWER STATUS              "
+              << "MODE STATUS                  "
+              << "SYSTEM LOG\n";
 
-    std::cout << std::fixed << std::setprecision(2);
+    std::ostringstream left, center, right;
 
-    std::cout << std::left << std::setw(COL_WIDTH)
-              << ("Follower Pos : (" + std::to_string(fx) + ", " + std::to_string(fy) + ", " + std::to_string(fz) + ")")
-              << std::setw(COL_WIDTH)
-              << ("Current Mode : " + mode)
-              << ("Iteration    : " + std::to_string(iteration)) << "\n";
+    left << std::fixed << std::setprecision(2)
+         << "Follower Pos : (" << fx << ", " << fy << ", " << fz << ")\n"
+         << "Target Pos   : (" << tx << ", " << ty << ", " << tz << ")\n"
+         << heatColor << "Heat Signal  : " << heat << "\033[0m\n";
 
-    std::cout << std::left << std::setw(COL_WIDTH)
-              << ("Target Pos   : (" + std::to_string(tx) + ", " + std::to_string(ty) + ", " + std::to_string(tz) + ")")
-              << std::setw(COL_WIDTH)
-              << ("Mode Changed : " + std::string(modeChanged ? "YES" : "NO"))
-              << ("Distance     : " + std::to_string(distance)) << "\n";
+    center << "Current Mode : " << mode << "\n"
+           << "Mode Changed : " << (modeChanged ? "YES" : "NO") << "\n"
+           << "Reason       : " << reason << "\n";
 
-    std::cout << std::left << std::setw(COL_WIDTH)
-              << (heatColor + "Heat Signal  : " + std::to_string(heat) + "\033[0m")
-              << std::setw(COL_WIDTH)
-              << ("Reason       : " + reason)
-              << ("Status       : " + std::string(mode == "stopped" ? "Ended" : "Active")) << "\n";
+    right << "Iteration    : " << iteration << "\n"
+          << "Distance     : " << distance << "\n"
+          << "Status       : " << std::string(mode == "stopped" ? "Ended" : "Active") << "\n";
+
+    // Print line by line
+    std::istringstream l(left.str()), c(center.str()), r(right.str());
+    std::string lLine, cLine, rLine;
+
+    while (std::getline(l, lLine) && std::getline(c, cLine) && std::getline(r, rLine))
+    {
+        std::cout << std::left
+                  << std::setw(32) << lLine
+                  << std::setw(32) << cLine
+                  << rLine << "\n";
+    }
 
     std::cout << "\n\033[2;36mCURRENT MATRIX BOUNDS:\033[0m\n";
-    std::cout << std::left << std::setw(COL_WIDTH)
-              << ("X: [" + std::to_string(travelMinX) + ", " + std::to_string(travelMaxX) + "]")
-              << std::setw(COL_WIDTH)
-              << ("Y: [" + std::to_string(travelMinY) + ", " + std::to_string(travelMaxY) + "]")
-              << ("Z: [" + std::to_string(travelMinZ) + ", " + std::to_string(travelMaxZ) + "]") << "\n";
+    std::cout << "X: [" << travelMinX << ", " << travelMaxX << "]   "
+              << "Y: [" << travelMinY << ", " << travelMaxY << "]   "
+              << "Z: [" << travelMinZ << ", " << travelMaxZ << "]\n";
 }
 
 void runScenarioMainMode(Object &follower, int speed, int iterations)
@@ -128,5 +135,5 @@ void runScenarioMainMode(Object &follower, int speed, int iterations)
         ++count;
     }
 
-    std::cout << "\n\033[1;31mSimulation complete.\033[0m\n";
+    std::cout << "\n\033[1;31mTarget reached.\033[0m\n";
 }
