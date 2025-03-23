@@ -103,3 +103,8 @@ void Tracker::switchModeIfNecessary()
         }
     }
 }
+
+std::string Tracker::getCurrentMode() const
+{
+    return trackingMode;
+}

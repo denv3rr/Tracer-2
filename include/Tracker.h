@@ -20,6 +20,10 @@ public:
     void updateHeatSignature(float heatValue);
     bool isTrackingActive() const;
 
+    // Helpers
+    float computeDistance() const;
+    std::string getCurrentMode() const;
+
 private:
     Object &follower;
     const Object *target;
@@ -32,7 +36,6 @@ private:
     int modeSwitchCounter;
 
     // Internal helpers
-    float computeDistance() const;
     void switchModeIfNecessary();
 };
 
