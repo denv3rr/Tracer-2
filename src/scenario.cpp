@@ -30,37 +30,47 @@ void printHorizontalUI(const Object &follower, const Object &target, const std::
     auto [fx, fy, fz] = follower.getPosition3D();
     auto [tx, ty, tz] = target.getPosition3D();
 
-    std::cout << "\033[2J\033[H"; // Clear screen and move cursor to top
+    std::string heatColor;
+    if (heat > 200)
+        heatColor = "\033[1;31m"; // 🔴 Red - at close proximity
+    else if (heat > 100)
+        heatColor = "\033[1;33m"; // 🟡 Yellow - mid proximity
+    else
+        heatColor = "\033[1;34m"; // 🔵 Blue - far but detectable
 
-    std::cout << std::left << std::setw(35) << "\033[1;32mFOLLOWER STATUS\033[0m"
-              << std::setw(35) << "\033[1;33mMODE STATUS\033[0m"
+    std::cout << "\033[2J\033[H"; // Clear screen and move cursor to top
+    constexpr int COL_WIDTH = 30;
+
+    std::cout << std::left << std::setw(COL_WIDTH) << "\033[1;32mFOLLOWER STATUS\033[0m"
+              << std::setw(COL_WIDTH) << "\033[1;33mMODE STATUS\033[0m"
               << "\033[1;36mSYSTEM LOG\033[0m\n";
 
-    std::cout << std::left << std::setw(35)
-              << "Follower Pos : (" + std::to_string(fx) + ", " + std::to_string(fy) + ", " + std::to_string(fz) + ")"
-              << std::setw(35)
-              << "Current Mode : " + mode
-              << "Iteration    : " << iteration << "\n";
+    std::cout << std::fixed << std::setprecision(2);
 
-    std::cout << std::left << std::setw(35)
-              << "Target Pos   : (" + std::to_string(tx) + ", " + std::to_string(ty) + ", " + std::to_string(tz) + ")"
-              << std::setw(35)
-              << "Mode Changed : " + std::string(modeChanged ? "YES" : "NO")
-              << "Distance     : " << std::fixed << std::setprecision(2) << distance << "\n";
+    std::cout << std::left << std::setw(COL_WIDTH)
+              << ("Follower Pos : (" + std::to_string(fx) + ", " + std::to_string(fy) + ", " + std::to_string(fz) + ")")
+              << std::setw(COL_WIDTH)
+              << ("Current Mode : " + mode)
+              << ("Iteration    : " + std::to_string(iteration)) << "\n";
 
-    std::cout << std::left << std::setw(35)
-              << "Heat Signal  : " + std::to_string(heat)
-              << std::setw(35)
-              << "Reason       : " + reason
-              << "Status       : " << (mode == "stopped" ? "Ended" : "Active") << "\n";
+    std::cout << std::left << std::setw(COL_WIDTH)
+              << ("Target Pos   : (" + std::to_string(tx) + ", " + std::to_string(ty) + ", " + std::to_string(tz) + ")")
+              << std::setw(COL_WIDTH)
+              << ("Mode Changed : " + std::string(modeChanged ? "YES" : "NO"))
+              << ("Distance     : " + std::to_string(distance)) << "\n";
 
-    // Display auto-expanding boundaries
+    std::cout << std::left << std::setw(COL_WIDTH)
+              << (heatColor + "Heat Signal  : " + std::to_string(heat) + "\033[0m")
+              << std::setw(COL_WIDTH)
+              << ("Reason       : " + reason)
+              << ("Status       : " + std::string(mode == "stopped" ? "Ended" : "Active")) << "\n";
+
     std::cout << "\n\033[2;36mCURRENT MATRIX BOUNDS:\033[0m\n";
-    std::cout << std::left << std::setw(35)
-              << "X: [" + std::to_string(travelMinX) + ", " + std::to_string(travelMaxX) + "]"
-              << std::setw(35)
-              << "Y: [" + std::to_string(travelMinY) + ", " + std::to_string(travelMaxY) + "]"
-              << "Z: [" + std::to_string(travelMinZ) + ", " + std::to_string(travelMaxZ) + "]\n";
+    std::cout << std::left << std::setw(COL_WIDTH)
+              << ("X: [" + std::to_string(travelMinX) + ", " + std::to_string(travelMaxX) + "]")
+              << std::setw(COL_WIDTH)
+              << ("Y: [" + std::to_string(travelMinY) + ", " + std::to_string(travelMaxY) + "]")
+              << ("Z: [" + std::to_string(travelMinZ) + ", " + std::to_string(travelMaxZ) + "]") << "\n";
 }
 
 void runScenarioMainMode(Object &follower, int speed, int iterations)
