@@ -24,6 +24,12 @@ void GPSAlgorithm::setGPSData(const std::tuple<int, int, int> &gpsData)
 
 std::tuple<int, int, int> GPSAlgorithm::calculatePath(const Object &follower, const Object &target)
 {
+    // Fallback to target position if GPS not set
+    if (gpsCoordinates == std::tuple<int, int, int>{0, 0, 0})
+    {
+        return target.getPosition3D();
+    }
+
     return gpsCoordinates;
 }
 
@@ -38,6 +44,6 @@ std::tuple<int, int, int> KalmanFilter::calculatePath(const Object &follower, co
 {
     auto [fx, fy, fz] = follower.getPosition3D();
     auto [tx, ty, tz] = target.getPosition3D();
-    float kalmanGain = 0.5; // Placeholder value, to be tuned based on real-world tracking
+    float kalmanGain = 0.5; // ***Placeholder value*** to be tuned
     return {fx + static_cast<int>(kalmanGain * (tx - fx)), fy + static_cast<int>(kalmanGain * (ty - fy)), fz + static_cast<int>(kalmanGain * (tz - fz))};
 }
