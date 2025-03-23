@@ -49,7 +49,10 @@ void Tracker::startTracking(int iterations, int speed)
 void Tracker::update()
 {
     if (!target || !pathCalculator)
+    {
+        std::cerr << "[WARN] No path calculator set!\n";
         return;
+    }
 
     auto newPosition = pathCalculator->calculatePath(follower, *target);
     follower.moveTo(newPosition);

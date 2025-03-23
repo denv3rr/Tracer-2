@@ -13,6 +13,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 # Executable target and source files
 add_executable(Tracer-2
         src/main.cpp
+        src/inputValidation.cpp
         src/PathAlgorithms.cpp
         src/menu.cpp
         src/Object.cpp
