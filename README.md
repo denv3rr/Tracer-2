@@ -146,7 +146,6 @@ You can fix this repo and create a pull request with any changes.
 
 ### **Links**
 
-<details>
 <summary>Expand</summary>
 <br></br>
 
@@ -166,7 +165,6 @@ You can fix this repo and create a pull request with any changes.
 - **Predictive Algorithms in Motion Tracking** || [An Elementary Introduction to Kalman Filtering - University of Texas](https://www.cs.utexas.edu/~mooney/cs343/kalman.pdf)
 
 </div>
-</details>
 
 <br></br>
 <br></br>
