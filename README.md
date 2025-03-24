@@ -18,7 +18,7 @@
   <br></br>
     <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
     <br></br>
-[About](#adaptable) | [Run and Debug](#run-and-debug) | [Issues](#issues) | [Contributing](#contributing) | [Links](#links) | [Contact](#contact)
+[About](#adaptable) | [Run and Debug](#run-and-debug) | [Links](#links) | [Issues](#issues) | [Contributing](#contributing) | [Contact](#contact)
     <br></br>
   <a href="https://seperet.com">
     <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
@@ -105,6 +105,33 @@ A **tracking solution** designed for dynamic environments with precision via aut
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
 
+### **Links**
+<br></br>
+
+<div align="left">
+  
+- **Seperet** || [Seperet](https://seperet.com) ![Website](https://img.shields.io/website?url=https%3A%2F%2Fseperet.com&label=seperet.com)
+- **AIM-9X** || [AIM-9X Sidewinder](https://www.navair.navy.mil/product/AIM-9X-Sidewinder)
+- **JASSM** || [Lockheed Martin JASSM: Reliable. Affordable. Proven.](https://www.lockheedmartin.com/en-us/products/jassm.html)
+- **MBDA Systems** || [MBDA Systems](https://web.archive.org/web/20130426072127/http://www.mbda-systems.com/solutions.php)
+- **Guided Missiles** || [Diehl Defense: Guided Missiles](https://web.archive.org/web/20130615032734/http://www.diehl.com/en/diehl-defence/products/guided-missiles.html)
+- **AGM-65 Maverick** || [Raytheon AGM-65 Maverick - U.S. Air Force](https://www.af.mil/About-Us/Fact-Sheets/Display/Article/104577/agm-65-maverick/)
+- **Brimstone Air-To-Surface** || [Royal Air Force - Brimstone](https://web.archive.org/web/20101206133128/http://www.raf.mod.uk/equipment/brimstone.cfm)
+- **Thermal Detection** || [Long-Range Thermal Target Detection in Data-Limited Settings Using Restricted Receptive Fields](https://www.mdpi.com/1424-8220/23/18/7806) 
+- **Detecting Minimal Thermal Signatures** || [Detecting Small Size and Minimal Thermal Signature Targets in Infrared Imagery Using Biologically Inspired Vision](https://www.mdpi.com/1424-8220/21/5/1812)
+- **Kalman Filter** || [An Introduction to the Kalman Filter - MIT](http://www.mit.edu/~jwilson/kalman.pdf)
+- **Understanding Kalman Filters** || [An Introduction to the Kalman Filter - University of North Carolina](https://www.cs.unc.edu/~welch/media/pdf/kalman_intro.pdf)
+- **Tutorial: The Kalman Filter** || [Tutorial: The Kalman Filter - MIT](https://web.mit.edu/kirtley/kirtley/binlustuff/literature/control/Kalman%20filter.pdf)
+- **Predictive Algorithms in Motion Tracking** || [An Elementary Introduction to Kalman Filtering - University of Texas](https://www.cs.utexas.edu/~mooney/cs343/kalman.pdf)
+
+</div>
+
+<br></br>
+<br></br>
+<br></br>
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
+
+
 
 ### **Issues**
 
@@ -139,35 +166,6 @@ You can fix this repo and create a pull request with any changes.
 [Create a new fork](https://github.com/denv3rr/Tracer-2/fork)
 
 </details>
-<br></br>
-<br></br>
-<br></br>
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
-
-### **Links**
-
-<details>
-<summary>Expand</summary>
-<br></br>
-
-<div align="left">
-  
-- **Seperet** || [Seperet](https://seperet.com) ![Website](https://img.shields.io/website?url=https%3A%2F%2Fseperet.com&label=seperet.com)
-- **JASSM** || [Lockheed Martin JASSM: Reliable. Affordable. Proven.](https://www.lockheedmartin.com/en-us/products/jassm.html)
-- **MBDA Systems** || [MBDA Systems](https://web.archive.org/web/20130426072127/http://www.mbda-systems.com/solutions.php)
-- **Guided Missiles** || [Diehl Defense: Guided Missiles](https://web.archive.org/web/20130615032734/http://www.diehl.com/en/diehl-defence/products/guided-missiles.html)
-- **AGM-65 Maverick** || [Raytheon AGM-65 Maverick - U.S. Air Force](https://www.af.mil/About-Us/Fact-Sheets/Display/Article/104577/agm-65-maverick/)
-- **Brimstone Air-To-Surface** || [Royal Air Force - Brimstone](https://web.archive.org/web/20101206133128/http://www.raf.mod.uk/equipment/brimstone.cfm)
-- **Thermal Detection** || [Long-Range Thermal Target Detection in Data-Limited Settings Using Restricted Receptive Fields](https://www.mdpi.com/1424-8220/23/18/7806) 
-- **Detecting Minimal Thermal Signatures** || [Detecting Small Size and Minimal Thermal Signature Targets in Infrared Imagery Using Biologically Inspired Vision](https://www.mdpi.com/1424-8220/21/5/1812)
-- **Kalman Filter** || [An Introduction to the Kalman Filter - MIT](http://www.mit.edu/~jwilson/kalman.pdf)
-- **Understanding Kalman Filters** || [An Introduction to the Kalman Filter - University of North Carolina](https://www.cs.unc.edu/~welch/media/pdf/kalman_intro.pdf)
-- **Tutorial: The Kalman Filter** || [Tutorial: The Kalman Filter - MIT](https://web.mit.edu/kirtley/kirtley/binlustuff/literature/control/Kalman%20filter.pdf)
-- **Predictive Algorithms in Motion Tracking** || [An Elementary Introduction to Kalman Filtering - University of Texas](https://www.cs.utexas.edu/~mooney/cs343/kalman.pdf)
-
-</div>
-</details>
-
 <br></br>
 <br></br>
 <br></br>
